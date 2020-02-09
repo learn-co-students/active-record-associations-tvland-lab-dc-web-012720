@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_09_224701) do
+ActiveRecord::Schema.define(version: 2020_02_09_230449) do
 
   create_table "actors", force: :cascade do |t|
     t.string "first_name"
@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 2020_02_09_224701) do
     t.string "catchphrase"
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "networks", force: :cascade do |t|
     t.string "call_letters"
     t.integer "channel"
@@ -34,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_02_09_224701) do
     t.integer "network_id"
     t.string "day"
     t.string "season"
+    t.integer "genre_id"
   end
 
 end
