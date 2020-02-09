@@ -43,10 +43,11 @@ describe Show do
   end
 
   it "should have a genre" do
+    genre = Genre.new(name: "Dramedy")
     show.name = "Gilmore Girls"
-    show.genre = "Dramedy"
+    show.genre = genre
     show.save
-    dramedy = Show.find_by(:genre => "Dramedy")
+    dramedy = Show.find_by(:genre => genre)
     expect(dramedy.name).to eq("Gilmore Girls")
   end
 
